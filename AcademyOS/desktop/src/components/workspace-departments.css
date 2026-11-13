@@ -1,0 +1,42 @@
+.department-toolbar>div{display:flex;gap:12px;align-items:center}.department-toolbar select{max-width:210px}
+.department-empty{padding:55px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:350px;justify-content:center}
+.department-empty-icon{display:grid;place-items:center;width:74px;height:74px;border-radius:23px;border:1px solid #fff;background:#e3eddf;color:#64835c;margin-bottom:25px}
+.department-empty h2{font-size:26px;font-weight:550;letter-spacing:-.8px;color:#31513b;margin:13px 0 10px}.department-empty p{font-size:12px;line-height:1.8;max-width:390px;color:#758b76;margin-bottom:24px}
+.department-count{font-size:11px;color:#799179;margin:-4px 0 17px}.department-card-actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.department-card-actions .text-button{font-size:10px}
+.department-mode{display:flex;margin:22px 0 3px}.department-mode button{flex:1;justify-content:center}.department-dialog textarea{width:100%;resize:vertical;min-height:90px}
+.department-suggestions{max-height:300px;overflow:auto;overscroll-behavior:contain;display:grid;gap:8px;padding:3px;scrollbar-width:thin}
+.department-suggestion{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid #dfe8dc;border-radius:11px;background:#ffffff8c;cursor:pointer}.department-suggestion:has(input:checked){border-color:#9ab99b;background:#eaf2e5}.department-suggestion input{accent-color:#2e5d4e;margin-top:3px;width:15px;height:15px;flex-shrink:0}.department-suggestion strong{display:block;font-size:12px;font-weight:550;color:#3c6140}.department-suggestion small{display:block;font-size:10px;line-height:1.6;color:#7b9077;margin-top:4px}.department-suggestion.is-added{opacity:.6;cursor:default}
+.people-department-select{max-width:180px;font-size:11px;padding:8px;border-radius:8px;border:1px solid #dce6da;background:#fff;color:#4b6c4e}
+@media(max-width:760px){.department-toolbar>div{width:100%;justify-content:space-between}.department-toolbar select{max-width:50%;min-width:0}.department-empty{padding:35px 20px}.department-empty h2{font-size:23px}.department-dialog .field input,.department-dialog .field textarea{font-size:16px}}
+
+.modal.department-dialog{width:470px;max-width:calc(100% - 32px);max-height:calc(100dvh - 40px);padding:28px;border:1px solid #ffffffdf;border-radius:25px;background:linear-gradient(140deg,#fcfefbf5,#f5f9f2f5);box-shadow:0 30px 90px #173d322e,inset 0 1px 0 #fff}
+.department-dialog .modal-head{padding-bottom:20px;margin-bottom:0;border-color:#dfe8df}
+.department-dialog .modal-head .eyebrow{font-size:8px;letter-spacing:1.6px;color:#7a9083}
+.department-dialog .modal-head h2{font-size:26px;font-weight:600;letter-spacing:-.8px;line-height:1.2;margin-top:9px;color:#203b30}
+.department-dialog .modal-head>.icon-button{width:31px;height:31px;flex-shrink:0;border:1px solid #e0e9e1;background:#ffffffa6;border-radius:50%;color:#647e6d}
+.department-dialog .modal-head>.icon-button:hover{background:#e9f0e6}
+.department-dialog .department-mode{position:relative;isolation:isolate;padding:4px;gap:4px;margin:22px 0 3px;border:1px solid #e0e8dc;border-radius:12px;background:#eaf0e5a1}
+.department-dialog .department-mode::before{content:"";position:absolute;inset:4px auto 4px 4px;width:calc(50% - 6px);border-radius:8px;background:#fff;box-shadow:0 2px 5px #3151370a;transition:transform 280ms cubic-bezier(.22,1,.36,1);z-index:-1}
+.department-dialog .department-mode[data-mode="suggested"]::before{transform:translateX(calc(100% + 4px))}
+.department-dialog .department-mode button{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 7px;min-height:38px;font-size:11px;white-space:nowrap;background:transparent;box-shadow:none;border-radius:8px;color:#84947d}
+.department-dialog .department-mode button.active{background:transparent;box-shadow:none;color:#3e684c}
+.department-dialog .modal-body{padding-top:22px;gap:20px}
+.department-dialog .field{position:relative;gap:8px}
+.department-dialog .field>span{font-size:11px;font-weight:550;color:#4a6251}
+.department-dialog .field>small{position:absolute;right:0;top:0;font-size:10px;color:#92a08f;line-height:1.5;margin:0}
+.department-dialog .field input,.department-dialog .field textarea{background:#fff;border:1px solid #d9e3d9;border-radius:10px;padding:12px 13px;font-size:12px;line-height:1.6;color:#34523d;min-height:46px}
+.department-dialog .field textarea{min-height:104px;max-height:220px}
+.department-dialog .field input::placeholder,.department-dialog .field textarea::placeholder{color:#9ba89d;font-size:11px}
+.department-dialog .field input:focus,.department-dialog .field textarea:focus{outline:none}
+.department-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px;border-top:1px solid #e1e9de;padding-top:19px;margin-top:2px}
+.department-actions>.danger-text{margin-right:auto;font-size:10px}
+.department-cancel{border:1px solid #dce6da;background:#ffffff8c;border-radius:9px;padding:11px 16px;min-height:42px;font-size:11px;color:#65805e}.department-cancel:hover{background:#eaf1e5}
+.department-submit{display:flex;align-items:center;justify-content:center;gap:12px;min-height:42px;padding:11px 17px;border:1px solid #285341;border-radius:9px;background:linear-gradient(180deg,#356b55,#2c5947);color:#fff;font-size:11px;font-weight:550;box-shadow:inset 0 1px 0 #ffffff18,0 2px 4px #193e2914}
+.department-submit:hover:not(:disabled){background:#285340}.department-submit:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.department-dialog .modal-body>p{font-size:11px;line-height:1.7;color:#7d9277}
+.department-dialog .search-input{min-height:43px;border-radius:10px;font-size:12px}.department-dialog .search-input input{font-size:12px}
+.department-dialog .department-suggestions{max-height:270px;gap:7px}.department-dialog .department-suggestion{padding:12px;transition:background-color 180ms,border-color 180ms}
+.department-dialog .error{font-size:11px;line-height:1.6}
+@media(max-width:480px){.modal.department-dialog{padding:23px 21px;border-radius:22px}.department-dialog .modal-head h2{font-size:24px}.department-dialog .department-mode button{font-size:10px;gap:5px}.department-dialog .field input,.department-dialog .field textarea,.department-dialog .search-input input{font-size:16px}.department-dialog .department-actions{gap:9px}.department-dialog .department-submit{flex:1;font-size:10px}.department-actions>.danger-text{width:100%;text-align:left;margin-bottom:4px}}
+@media(max-height:650px){.modal.department-dialog{padding:20px}.department-dialog .modal-head{padding-bottom:15px}.department-dialog .department-mode{margin-top:17px}.department-dialog .modal-body{padding-top:16px;gap:16px}.department-dialog .department-suggestions{max-height:190px}}
+@media(prefers-reduced-motion:reduce){.department-dialog .department-mode::before{transition:none}}

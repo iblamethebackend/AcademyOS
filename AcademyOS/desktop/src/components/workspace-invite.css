@@ -1,0 +1,23 @@
+.modal.workspace-invite-modal{width:470px;max-width:calc(100% - 32px);max-height:calc(100dvh - 40px);padding:28px;border:1px solid #ffffffdf;border-radius:25px;background:linear-gradient(140deg,#fcfefbf5,#f5f9f2f5);box-shadow:0 30px 90px #173d322e,inset 0 1px 0 #fff}
+.workspace-invite-modal .modal-head{padding-bottom:20px;margin-bottom:0;border-color:#dfe8df;gap:16px}
+.workspace-invite-modal .modal-head .eyebrow{font-size:8px;letter-spacing:1.6px;color:#7a9083}
+.workspace-invite-modal .modal-head h2{font-size:26px;font-weight:600;letter-spacing:-.8px;line-height:1.2;margin-top:9px;color:#203b30}
+.workspace-invite-modal .modal-head>.icon-button{width:31px;height:31px;flex-shrink:0;border:1px solid #e0e9e1;background:#ffffffa6;border-radius:50%;color:#647e6d}
+.workspace-invite-modal .modal-head>.icon-button:hover{background:#e9f0e6;color:#294e39}
+.invite-form{display:grid;gap:19px;padding-top:22px}
+.invite-introduction{display:flex;gap:12px;align-items:center;margin-bottom:1px;min-width:0}
+.invite-introduction-icon{display:grid;place-items:center;flex-shrink:0;width:42px;height:42px;border:1px solid #dae7da;border-radius:13px;background:#e8f1e4;color:#527b52}
+.invite-introduction>div{min-width:0}.invite-introduction p{font-size:12px;line-height:1.6;color:#617a68;overflow-wrap:anywhere}.invite-introduction strong{font-weight:550;color:#35583f}.invite-introduction small{display:block;font-size:10px;color:#87958b;line-height:1.6;margin-top:3px}
+.invite-field{display:grid;gap:8px}.invite-field>span{font-size:11px;font-weight:550;color:#4a6251}
+.invite-control{display:flex;align-items:center;gap:10px;min-height:46px;padding:0 13px;border:1px solid #d9e3d9;border-radius:10px;background:#fff;color:#8ca18d;transition:border-color 180ms,box-shadow 180ms}
+.invite-control>svg{flex-shrink:0}.invite-control input,.invite-control select{flex:1;min-width:0;width:100%;border:0;background:transparent;outline:none;padding:12px 0;color:#34523d;font:inherit;font-size:12px;line-height:1.6}
+.invite-control input::placeholder{color:#9ba89d;font-size:11px}.invite-control input:focus-visible,.invite-control select:focus-visible{outline:none}
+.invite-control select{appearance:none;cursor:pointer}.invite-select-arrow{pointer-events:none;display:grid;place-items:center;color:#719176}
+.invite-preview-note{display:flex;align-items:flex-start;gap:10px;padding:13px 14px;border:1px solid #dfe8dc;border-radius:11px;background:#edf3e980;color:#809c74;margin-top:1px}
+.invite-preview-note>svg{flex-shrink:0;margin-top:1px}.invite-preview-note strong{font-size:10px;line-height:1.6;font-weight:600;color:#627e59}.invite-preview-note p{font-size:10px;line-height:1.7;color:#80917a;margin-top:3px}
+.invite-actions{display:flex;align-items:center;justify-content:flex-end;gap:12px;border-top:1px solid #e1e9de;padding-top:19px;margin-top:1px}
+.invite-cancel{border:1px solid #dce6da;background:#ffffff8c;border-radius:9px;padding:11px 16px;min-height:42px;font-size:11px;color:#65805e}.invite-cancel:hover{background:#eaf1e5}
+.invite-submit{display:flex;align-items:center;justify-content:center;gap:14px;min-height:42px;padding:11px 17px;border:1px solid #285341;border-radius:9px;background:linear-gradient(180deg,#356b55,#2c5947);color:#fff;font-size:11px;font-weight:550;box-shadow:inset 0 1px 0 #ffffff18,0 2px 4px #193e2914}.invite-submit:hover{background:#285340}
+.invite-error{display:flex;align-items:flex-start;gap:8px;border-radius:9px;background:#faf0e9;padding:10px 12px;font-size:11px;line-height:1.7;color:#a9654d}.invite-error svg{flex-shrink:0;margin-top:2px}
+@media(max-width:480px){.modal.workspace-invite-modal{padding:23px 21px;border-radius:22px}.workspace-invite-modal .modal-head h2{font-size:24px}.invite-form{gap:17px}.invite-control input,.invite-control select{font-size:16px}.invite-actions{gap:10px}.invite-submit{flex:1}.invite-cancel{padding-inline:14px}}
+@media(max-height:650px){.modal.workspace-invite-modal{padding:20px}.workspace-invite-modal .modal-head{padding-bottom:15px}.invite-form{padding-top:15px;gap:13px}.invite-control{min-height:42px}.invite-control input,.invite-control select{padding:9px 0}.invite-actions{padding-top:14px}}

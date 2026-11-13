@@ -1,0 +1,18 @@
+{
+  "roles": 18,
+  "viewports": [
+    390,
+    1440,
+    320
+  ],
+  "checks": [
+    "Role switching",
+    "Task reviewed state",
+    "Module details across all departments",
+    "Search empty state",
+    "Inbox read state",
+    "No page errors",
+    "No horizontal overflow at 320px"
+  ],
+  "errors": []
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/005c23a688a89e53843cb646.woff2",
+    "mimeType": "font/woff2",
+    "bytes": 21808,
+    "sha256": "005c23a688a89e53843cb6462147189fbe2750bc3fa0bdb624d94420d1ae6db4"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/138493b2148e9b1d79b483e9.webp",
+    "mimeType": "image/webp",
+    "bytes": 1181184,
+    "sha256": "138493b2148e9b1d79b483e9f6b28facc228639808221a19ffca4e66abec4b60"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/3ad961651e2e88185af10641.woff2",
+    "mimeType": "font/woff2",
+    "bytes": 27660,
+    "sha256": "3ad961651e2e88185af10641727c9372412853073ab9521c8eb0099540ac555b"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/617f7d8645b6ed1ea93e9864.webp",
+    "mimeType": "image/webp",
+    "bytes": 1124134,
+    "sha256": "617f7d8645b6ed1ea93e98647ff4aae7906d1715efb2a5aca649762103e3bde1"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/702e0b0597b963d619f7df7e.woff2",
+    "mimeType": "font/woff2",
+    "bytes": 28912,
+    "sha256": "702e0b0597b963d619f7df7eb2d436395a19fd3431c019ebb967be029015afb4"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/88ab725e96ae0baa78ec9a5c.svg",
+    "mimeType": "image/svg+xml",
+    "bytes": 201,
+    "sha256": "88ab725e96ae0baa78ec9a5cdb785e591429b936a0da26e263828aa17a46e1cb"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/99a2f19505e253982132c24b.webp",
+    "mimeType": "image/webp",
+    "bytes": 1357562,
+    "sha256": "99a2f19505e253982132c24b42dc715770fa19d99a0f0185094f754978718ff9"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/dfb97834ffca48e0b6e3c9f1.woff2",
+    "mimeType": "font/woff2",
+    "bytes": 21832,
+    "sha256": "dfb97834ffca48e0b6e3c9f175ed0a18d65b80f333b0537445e93ccb4f67f74d"
+  },
+  {
+    "path": "public/landing-pages/aura-2026-10-27-assets/ffc0cffb772c696a144208ad.webp",
+    "mimeType": "image/webp",
+    "bytes": 1512162,
+    "sha256": "ffc0cffb772c696a144208addfe68e4bead9a75feb8d92c81c0dbef6b6ff3a3b"
+  }
+]

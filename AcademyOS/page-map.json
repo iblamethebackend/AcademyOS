@@ -1,0 +1,357 @@
+[
+  {
+    "title": "A calmer school day.",
+    "section": "Cover",
+    "page": 1
+  },
+  {
+    "title": "A complete plan, built to be used.",
+    "section": "Read this first",
+    "page": 2
+  },
+  {
+    "title": "Built around the whole school.",
+    "section": "01 / Product strategy",
+    "page": 3
+  },
+  {
+    "title": "The right workspace for each role.",
+    "section": "01 / People & accountability",
+    "page": 4
+  },
+  {
+    "title": "Permissions are a product feature.",
+    "section": "01 / Authorization model",
+    "page": 5
+  },
+  {
+    "title": "Navigation with clear boundaries.",
+    "section": "01 / Information architecture",
+    "page": 6
+  },
+  {
+    "title": "Five journeys that must work end to end.",
+    "section": "01 / Service journeys",
+    "page": 7
+  },
+  {
+    "title": "A SaaS business, not just a school portal.",
+    "section": "01 / Commercial requirements",
+    "page": 8
+  },
+  {
+    "title": "Tenant setup & onboarding",
+    "section": "02 / Functional requirements",
+    "page": 9
+  },
+  {
+    "title": "Identity, roles & permissions",
+    "section": "02 / Functional requirements",
+    "page": 10
+  },
+  {
+    "title": "Admissions & enquiry CRM",
+    "section": "02 / Functional requirements",
+    "page": 11
+  },
+  {
+    "title": "Student information & lifecycle",
+    "section": "02 / Functional requirements",
+    "page": 12
+  },
+  {
+    "title": "Academic setup & calendars",
+    "section": "02 / Functional requirements",
+    "page": 13
+  },
+  {
+    "title": "Timetable & substitutions",
+    "section": "02 / Functional requirements",
+    "page": 14
+  },
+  {
+    "title": "Attendance & leave",
+    "section": "02 / Functional requirements",
+    "page": 15
+  },
+  {
+    "title": "Teaching, homework & learning",
+    "section": "02 / Functional requirements",
+    "page": 16
+  },
+  {
+    "title": "Examinations & report cards",
+    "section": "02 / Functional requirements",
+    "page": 17
+  },
+  {
+    "title": "Fees, concessions & receivables",
+    "section": "02 / Functional requirements",
+    "page": 18
+  },
+  {
+    "title": "Payments & reconciliation",
+    "section": "02 / Functional requirements",
+    "page": 19
+  },
+  {
+    "title": "Accounting & financial controls",
+    "section": "02 / Functional requirements",
+    "page": 20
+  },
+  {
+    "title": "Staff, leave & payroll",
+    "section": "02 / Functional requirements",
+    "page": 21
+  },
+  {
+    "title": "Communication & engagement",
+    "section": "02 / Functional requirements",
+    "page": 22
+  },
+  {
+    "title": "Parent & student portals",
+    "section": "02 / Functional requirements",
+    "page": 23
+  },
+  {
+    "title": "Transport & student pickup",
+    "section": "02 / Functional requirements",
+    "page": 24
+  },
+  {
+    "title": "Library & circulation",
+    "section": "02 / Functional requirements",
+    "page": 25
+  },
+  {
+    "title": "Inventory, purchasing & assets",
+    "section": "02 / Functional requirements",
+    "page": 26
+  },
+  {
+    "title": "Health, wellbeing & safeguarding",
+    "section": "02 / Functional requirements",
+    "page": 27
+  },
+  {
+    "title": "Front office, events & helpdesk",
+    "section": "02 / Functional requirements",
+    "page": 28
+  },
+  {
+    "title": "Hostel, meals & enrichment",
+    "section": "02 / Functional requirements",
+    "page": 29
+  },
+  {
+    "title": "Analytics & reporting",
+    "section": "02 / Functional requirements",
+    "page": 30
+  },
+  {
+    "title": "Migration, integrations & automation",
+    "section": "02 / Functional requirements",
+    "page": 31
+  },
+  {
+    "title": "SaaS control plane & support",
+    "section": "02 / Functional requirements",
+    "page": 32
+  },
+  {
+    "title": "Architecture that can grow with the product.",
+    "section": "03 / Engineering",
+    "page": 33
+  },
+  {
+    "title": "Tenant isolation is enforced at every layer.",
+    "section": "03 / Architecture & tenancy",
+    "page": 34
+  },
+  {
+    "title": "A durable model of a changing school.",
+    "section": "03 / Data architecture",
+    "page": 35
+  },
+  {
+    "title": "Data integrity, lifecycle & retention.",
+    "section": "03 / Data contracts",
+    "page": 36
+  },
+  {
+    "title": "API contracts & reliable background jobs.",
+    "section": "03 / Integration design",
+    "page": 37
+  },
+  {
+    "title": "Payments: explicit states, recoverable failures.",
+    "section": "03 / Critical workflow",
+    "page": 38
+  },
+  {
+    "title": "Security, privacy & child data.",
+    "section": "03 / Trust requirements",
+    "page": 39
+  },
+  {
+    "title": "Measurable quality requirements.",
+    "section": "03 / Non-functional requirements",
+    "page": 40
+  },
+  {
+    "title": "Deploy, observe, restore.",
+    "section": "03 / Production operations",
+    "page": 41
+  },
+  {
+    "title": "A release gate with meaningful evidence.",
+    "section": "03 / Test strategy",
+    "page": 42
+  },
+  {
+    "title": "From discovery to a sustainable release.",
+    "section": "03 / Delivery plan",
+    "page": 43
+  },
+  {
+    "title": "Dependencies, decisions & rollout readiness.",
+    "section": "03 / Implementation handoff",
+    "page": 44
+  },
+  {
+    "title": "A visual system with room to breathe.",
+    "section": "04 / Experience foundations",
+    "page": 45
+  },
+  {
+    "title": "S01 / Welcome to your school workspace",
+    "section": "04 / Screen design",
+    "page": 46
+  },
+  {
+    "title": "S02 / Good morning, Ananya",
+    "section": "04 / Screen design",
+    "page": 47
+  },
+  {
+    "title": "S03 / Admissions pipeline",
+    "section": "04 / Screen design",
+    "page": 48
+  },
+  {
+    "title": "S04 / Student directory",
+    "section": "04 / Screen design",
+    "page": 49
+  },
+  {
+    "title": "S05 / Student profile",
+    "section": "04 / Screen design",
+    "page": 50
+  },
+  {
+    "title": "S06 / Take attendance",
+    "section": "04 / Screen design",
+    "page": 51
+  },
+  {
+    "title": "S07 / Weekly timetable",
+    "section": "04 / Screen design",
+    "page": 52
+  },
+  {
+    "title": "S08 / Learning workspace",
+    "section": "04 / Screen design",
+    "page": 53
+  },
+  {
+    "title": "S09 / Results & report cards",
+    "section": "04 / Screen design",
+    "page": 54
+  },
+  {
+    "title": "S10 / Fees & collections",
+    "section": "04 / Screen design",
+    "page": 55
+  },
+  {
+    "title": "S11 / Payment reconciliation",
+    "section": "04 / Screen design",
+    "page": 56
+  },
+  {
+    "title": "S12 / Staff & payroll",
+    "section": "04 / Screen design",
+    "page": 57
+  },
+  {
+    "title": "S13 / Communication centre",
+    "section": "04 / Screen design",
+    "page": 58
+  },
+  {
+    "title": "S14 / Transport operations",
+    "section": "04 / Screen design",
+    "page": 59
+  },
+  {
+    "title": "S15 / The family day, beautifully simple.",
+    "section": "04 / Screen design",
+    "page": 60
+  },
+  {
+    "title": "S16 / Attendance from the classroom.",
+    "section": "04 / Screen design",
+    "page": 61
+  },
+  {
+    "title": "S17 / Learning with a clear next step.",
+    "section": "04 / Screen design",
+    "page": 62
+  },
+  {
+    "title": "S18 / Roles & access",
+    "section": "04 / Screen design",
+    "page": 63
+  },
+  {
+    "title": "S19 / SaaS operations",
+    "section": "04 / Screen design",
+    "page": 64
+  },
+  {
+    "title": "S20 / Library desk",
+    "section": "04 / Screen design",
+    "page": 65
+  },
+  {
+    "title": "S21 / Purchasing & inventory",
+    "section": "04 / Screen design",
+    "page": 66
+  },
+  {
+    "title": "S22 / Help & service desk",
+    "section": "04 / Screen design",
+    "page": 67
+  },
+  {
+    "title": "S23 / School insights",
+    "section": "04 / Screen design",
+    "page": 68
+  },
+  {
+    "title": "Design the difficult moments, too.",
+    "section": "04 / States & interaction patterns",
+    "page": 69
+  },
+  {
+    "title": "Screen index & requirement traceability.",
+    "section": "04 / Design handoff",
+    "page": 70
+  },
+  {
+    "title": "Source notes & implementation handoff.",
+    "section": "Sources / version 1.0",
+    "page": 71
+  }
+]

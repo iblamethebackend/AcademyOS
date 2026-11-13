@@ -1,0 +1,12 @@
+'use client';
+import {useEffect,useRef,useId,cloneElement,isValidElement,type ReactElement,type ReactNode} from 'react';
+import {Icon} from './icons';
+export function Modal({title,children,onClose,wide=false,className='',eyebrow='ACADEMYOS WORKSPACE'}:{title:string;children:ReactNode;onClose:()=>void;wide?:boolean;className?:string;eyebrow?:string}){
+ const closing=useRef(false);const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{const el=ref.current;el?.showModal();el?.querySelector<HTMLElement>('input:not([disabled]):not([type=hidden]),textarea:not([disabled]),select:not([disabled])')?.focus({preventScroll:true});return()=>el?.close()},[]);
+ function close(){const el=ref.current;if(closing.current)return;if(!el||matchMedia('(prefers-reduced-motion: reduce)').matches){onClose();return}closing.current=true;el.classList.add('is-closing');el.animate([{opacity:1,translate:'0 0',scale:1},{opacity:0,translate:'0 8px',scale:.985}],{duration:160,easing:'ease-in',fill:'forwards'}).finished.then(()=>{if(el.isConnected)onClose()}).catch(()=>{});}
+ return <dialog ref={ref} className={'modal'+(wide?' wide':'')+(className?' '+className:'')} aria-labelledby="modal-title" data-lenis-prevent onCancel={e=>{e.preventDefault();close()}} onClick={e=>{if(e.target===e.currentTarget)close()}}><div className="modal-head"><div><span className="eyebrow">{eyebrow}</span><h2 id="modal-title">{title}</h2></div><button className="icon-button" aria-label="Close dialog" onClick={close}><Icon name="close"/></button></div>{children}</dialog>
+}
+export function Field({label,children,hint}:{label:string;children:ReactNode;hint?:string}){const hintId=useId();const control=isValidElement(children)?cloneElement(children as ReactElement<Record<string,unknown>>,{'aria-label':label,'aria-describedby':hint?hintId:undefined}):children;return <label className="field"><span>{label}</span>{control}{hint&&<small id={hintId} aria-hidden="true">{hint}</small>}</label>}
+export function Badge({children,tone='sage'}:{children:ReactNode;tone?:string}){return <span className={'badge '+tone}>{children}</span>}
+export function SectionTitle({title,description,children}:{title:string;description?:string;children?:ReactNode}){return <div className="section-title"><div><h2>{title}</h2>{description&&<p>{description}</p>}</div>{children}</div>}
+export function Empty({title,body}:{title:string;body:string}){return <div className="empty"><Icon name="search" size={28}/><h3>{title}</h3><p>{body}</p></div>}

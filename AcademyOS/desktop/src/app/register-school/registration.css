@@ -1,0 +1,65 @@
+/* Keep the owner flow readable across large monitors and narrow phones. */
+.register-account-check{padding:30px 0;display:grid;justify-items:start;gap:18px}
+.register-account-check-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:#e7efe3;color:#5c805c;margin-bottom:4px}
+.register-account-check .login-eyebrow{margin:0}.register-account-check h2{font-size:30px;letter-spacing:-1px;line-height:1.25;color:#203b30;font-weight:550}
+.register-account-check p{font-size:12px;line-height:1.8;color:#758a7b;max-width:360px}
+.register-account-check>a{font-size:11px;color:#4e765a;text-decoration:underline;text-underline-offset:4px}
+.register-check-spinner{width:21px;height:21px;border:2px solid #dce7d8;border-top-color:#4b7656;border-radius:50%;animation:register-check-spin .8s linear infinite}
+@keyframes register-check-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.register-check-spinner{animation:none}}
+.school-registration-page.auth-split .login-card{max-width:440px}
+.school-registration-page .register-progress{gap:0;margin-bottom:30px;padding-bottom:22px;border-bottom:1px solid #e6ebe7}
+.school-registration-page .register-progress>span{position:relative;flex:1;gap:7px;font-size:11px;color:#78847d}
+.school-registration-page .register-progress>span:last-child{flex:0}
+.school-registration-page .register-progress>span:not(:last-child)::after{content:"";height:1px;background:#e0e7e2;flex:1;margin:0 10px}
+.school-registration-page .register-progress i{width:25px;height:25px;flex-shrink:0;font-size:10px;background:#fff;border-color:#dce4de}
+.school-registration-page .register-progress .active{color:#285b47}
+.school-registration-page .register-progress .active i{background:#2e5d4e;border-color:#2e5d4e;color:white;box-shadow:0 0 0 4px #edf3ee}
+.school-registration-page .register-progress .complete i{background:#e6efe8;color:#2e5d4e}
+.school-registration-page .register-content .login-introduction{margin-bottom:26px}
+.school-registration-page .register-content .login-introduction h2{font-size:32px;line-height:1.18;letter-spacing:-1.2px;font-weight:600;max-width:360px;text-wrap:balance}
+.school-registration-page .login-eyebrow{font-size:9px;letter-spacing:1.6px;color:#657c6e;margin-bottom:10px}
+.school-registration-page .login-introduction p{font-size:13px;color:#738078;margin-top:12px}
+.school-registration-page .register-form{gap:18px}
+.school-registration-page .register-field-grid{gap:16px}
+.school-registration-page .login-field{gap:8px;align-content:start}
+.school-registration-page .login-field>label,.school-registration-page .signup-password-label{font-size:12px;font-weight:550;color:#42574b}
+.school-registration-page .login-input{min-height:48px;border-radius:9px;background:#fcfdfc;border-color:#d9e2dc;padding:0 13px}
+.school-registration-page .login-input input,.school-registration-page .register-field-grid .login-input input{font-size:13px;padding:12px 0}
+.school-registration-page .login-input input::placeholder{font-size:12px;color:#89968e}
+.school-registration-page .signup-password-label button{font-size:11px;color:#396550;min-height:20px}
+.school-registration-page .register-note{font-size:11px;text-align:left;line-height:1.6;color:#77867c;margin:0}
+.school-registration-page .register-join{border-top:1px solid #e6ebe7;padding-top:18px;font-size:12px;color:#78867d;line-height:1.7}
+.school-registration-page .register-join strong{color:#396550;font-weight:550}
+.school-registration-page .login-field-error{font-size:11px;line-height:1.4}
+@media(min-width:761px) and (max-height:800px){
+ .school-registration-page .register-progress{margin-bottom:20px;padding-bottom:16px}
+ .school-registration-page .register-content .login-introduction{margin-bottom:20px}
+ .school-registration-page .register-content .login-introduction h2{font-size:29px}
+ .school-registration-page .register-form{gap:13px}
+ .school-registration-page .login-input{min-height:43px}
+ .school-registration-page .login-input input{padding:10px 0}
+ .school-registration-page .register-join{padding-top:13px}
+}
+@media(max-width:760px){
+ .school-registration-page.auth-split{height:auto;min-height:100dvh;overflow:visible}
+ .school-registration-page.auth-split .login-main{height:auto;min-height:100dvh;padding:110px 24px 90px}
+ .school-registration-page.auth-split .login-footer{bottom:18px}
+ .school-registration-page .register-progress{margin-bottom:26px}
+ .school-registration-page .register-field-grid{grid-template-columns:1fr;gap:18px}
+ .school-registration-page .register-content .login-introduction h2{font-size:30px;max-width:330px}
+ .school-registration-page .login-input input,.school-registration-page .register-field-grid .login-input input{font-size:16px}
+ .school-registration-page .register-progress>span{font-size:10px;gap:5px}
+ .school-registration-page .register-progress>span:not(:last-child)::after{margin:0 7px}
+ .school-registration-page .register-progress i{width:22px;height:22px}
+}
+
+.school-registration-page .phone-number-input{gap:10px;padding-left:10px}
+.phone-country-picker{position:relative;flex-shrink:0;align-self:stretch;display:flex;align-items:center;border-right:1px solid #e0e7e2;padding-right:10px}
+.phone-country-display{display:flex;align-items:center;gap:6px;font-size:12px;color:#375b47;white-space:nowrap}
+.phone-country-display img{display:block;object-fit:contain;border-radius:2px;box-shadow:0 0 0 1px #213e3010}
+.school-registration-page .phone-country-picker select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.school-registration-page .phone-number-input input{min-width:0}
+@media(max-width:760px){.phone-country-display{font-size:13px;gap:7px}}
+
+.school-registration-page .register-form .login-input select{min-width:0;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}

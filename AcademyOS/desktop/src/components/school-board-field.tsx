@@ -1,0 +1,7 @@
+'use client';
+import {useState} from 'react';
+import {schoolBoardGroups} from '@/lib/school-boards';
+export function SchoolBoardField({value,onChange,error,disabled}:{value:string;onChange:(value:string)=>void;error?:string;disabled?:boolean}){
+ const [custom,setCustom]=useState(!schoolBoardGroups.some(g=>g.options.some(([id])=>id===value)));
+ return <div className="login-field"><label htmlFor="register-board">Board / curriculum</label><div className={'login-input'+(error?' invalid':'')}><select id="register-board" value={custom?'Other':value} disabled={disabled} aria-invalid={!!error} aria-describedby={error?'error-board':undefined} onChange={e=>{setCustom(e.target.value==='Other');onChange(e.target.value==='Other'?'':e.target.value)}}>{schoolBoardGroups.map(group=><optgroup key={group.label} label={group.label}>{group.options.map(([id,label])=><option key={id} value={id}>{label}</option>)}</optgroup>)}<option value="Other">Other - enter board / curriculum</option></select></div>{custom&&<><label htmlFor="register-custom-board">Board / curriculum name</label><div className="login-input"><input id="register-custom-board" value={value} onChange={e=>onChange(e.target.value)} maxLength={120} placeholder="Enter your board or curriculum" disabled={disabled} aria-invalid={!!error} aria-describedby={error?'error-board':undefined}/></div></>}{error&&<span id="error-board" className="login-field-error">{error}</span>}</div>
+}

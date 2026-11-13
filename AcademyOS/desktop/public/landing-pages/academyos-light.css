@@ -1,0 +1,32 @@
+﻿:root{--bg:#f7f9f6;--panel:#eef4ee;--ink:#1b3328;--muted:#718578;--copper:#4e7e5d;--line:rgba(46,93,78,.15);--font:Inter,Arial,sans-serif}
+@font-face{font-family:Inter;src:url('/fonts/InterVariable.woff2') format('woff2');font-weight:100 900;font-display:swap}
+body{background:var(--bg);color:var(--ink)}.brand{color:#2e5d4e!important}.hero-shade{background:linear-gradient(90deg,#f7f9f6,transparent 65%)!important}.hero-stage{background:transparent!important}.hero-description{color:#657d6d!important}.hero h1{color:#203c2e!important}.hero h1 em,.soft{color:#6b8f7a!important;-webkit-text-fill-color:initial!important;background:none!important}.pill.copper,.pill.light,.build-button{background:#2e5d4e!important;color:white!important;border-color:#2e5d4e!important}.composer{background:#ffffffbb!important;border-color:#c8d9cc!important}.composer textarea{color:#274734!important}.composer select{color:#587662!important}.announcement{background:#e8f2eb!important;color:#52715b!important}.assembly-browser,.editor{box-shadow:0 25px 80px #3554411a!important}.assembly-app{display:block!important}.assembly-layers{display:none!important}.assembly-page{width:100%!important}.horizon-art img{filter:sepia(.4) hue-rotate(65deg) saturate(.55)}.assembly-title{color:#244332}.footer-large{font-size:clamp(50px,15vw,220px)!important;color:#dbe7dd!important}.motion-toggle{background:#e8f2eb!important;color:#2e5d4e!important;border-color:#bcd0c1!important}.showcase{display:none!important}.pricing .price,.pricing .billing,.pricing .billing-note,.pricing .popular{display:none!important}.price-card{background:#f4f8f3!important;border-color:#d6e2d7!important}.price-card.featured{background:#e8f2eb!important}.pricing .plan-description{min-height:42px}.academy-features{padding-top:100px;padding-bottom:100px}.academy-filter{display:flex;gap:8px;margin:30px 0}.academy-filter button{border:1px solid #d1dfd4;border-radius:24px;padding:10px 18px;background:transparent;color:#6b8f7a;font-size:11px}.academy-filter button[aria-pressed=true]{background:#2e5d4e;color:white}.academy-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 35px}.academy-feature-grid details{border-bottom:1px solid #d8e4db;padding:19px 0}.academy-feature-grid summary{font-size:13px;cursor:pointer;color:#345b41;line-height:1.7}.academy-feature-grid small{float:right;background:#e8eee4;padding:2px 8px;border-radius:12px;font-size:8px;margin-left:8px}.academy-feature-grid details[data-status=available] small{background:#dcebdc;color:#346342}.academy-feature-grid p{font-size:12px;color:#788d7e;line-height:1.8;padding-top:12px}.editor-sidebar{display:none!important}.editor-body{grid-template-columns:1fr!important}.nav .brand{font-size:20px}.footer-bottom{padding-bottom:50px}.nav-links a{color:#5c7766!important}.section-head h2,.story-title h2,.faq h2,.final-copy h2{color:#244433!important}.section-head p,.feature p,.step p{color:#6b8172!important}
+@media(max-width:760px){.academy-feature-grid{grid-template-columns:1fr}.academy-features{padding-top:65px;padding-bottom:65px}.academy-filter button{font-size:10px;padding:9px 12px}.nav-links.open{background:#f0f6f0!important}.brand{font-size:18px!important}.hero h1{font-size:clamp(38px,10vw,64px)!important}}
+.composer{box-shadow:0 15px 45px #2e5d4e12!important}[data-prompt]{background:#e8f2eb!important;color:#42644f!important;border:1px solid #d6e4d9!important}.brand img{display:block;width:32px;height:32px}
+.assembly-app{display:grid!important;grid-template-columns:1fr!important}.assembly-badge{background:#e8f2eb!important;color:#2e5d4e!important;box-shadow:0 10px 35px #2e5d4e15!important}.wire-overlay{background:#e0eae1!important;color:#52735b!important}.editor-top .publish-mini{background:#2e5d4e!important;color:#fff!important}.assembled-cta{background:#2e5d4e!important;color:#fff!important}
+
+/* Floating glass navigation. */
+.nav,.nav.scrolled{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 48px));height:64px;border:1px solid #ffffffcf;border-radius:999px;background:linear-gradient(120deg,#ffffffbb,#f0f6f1a8)!important;-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);box-shadow:0 8px 30px #234c3612,inset 0 1px 0 #ffffffed;transition:box-shadow .2s,background .2s}
+.nav.scrolled{background:linear-gradient(120deg,#ffffffd9,#f0f6f1c4)!important;box-shadow:0 8px 32px #234c361c,inset 0 1px 0 #fff}
+.nav .nav-inner{width:100%;height:100%;padding:0 14px 0 22px;border:0;border-radius:inherit;gap:20px}
+.nav .nav-links{gap:22px;margin-left:0}
+.nav .nav-links a{padding:9px 0;white-space:nowrap}
+.nav .nav-links a:hover{color:#244b36!important}
+.nav .pill{border-radius:999px;padding:12px 18px;box-shadow:inset 0 1px 0 #ffffff18,0 2px 5px #234c3614;white-space:nowrap}
+.nav .quick-trigger{color:#5c7766}
+.nav .quick-trigger kbd{border-color:#b9cdbd;background:#ffffff65}
+.nav a:focus-visible,.nav button:focus-visible{outline:2px solid #648f75;outline-offset:4px;border-radius:20px}
+@media(min-width:761px) and (max-width:1050px){.nav .nav-links{gap:16px}.nav .nav-inner{gap:14px}.nav .quick-trigger{display:none}}
+@media(max-width:760px){
+ .nav,.nav.scrolled{top:12px;width:calc(100% - 24px);height:60px}
+ .nav .nav-inner{padding:0 10px 0 16px;gap:8px}
+ .nav .brand{font-size:18px!important;gap:7px;letter-spacing:-.8px;white-space:nowrap}
+ .nav .brand img{width:26px;height:26px}
+ .nav .nav-end{gap:5px}
+ .nav .pill{font-size:10px;padding:10px 12px}
+ .nav .menu-toggle{width:34px;height:34px;border-radius:50%;color:#2e5d4e;background:#ffffff66}
+ .nav .nav-links{top:70px;left:0;right:0;margin:0;border-radius:24px;padding:18px 22px;border:1px solid #ffffffcf;background:#f5faf4eb!important;-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 12px 30px #234c3618;gap:6px}
+ .nav .nav-links a{font-size:13px;padding:10px 0}
+}
+@media(max-width:370px){.nav .brand{font-size:16px!important}.nav .brand img{width:23px;height:23px}.nav .pill{font-size:9px;padding:10px}.nav .nav-inner{padding-left:12px}}
+@media(prefers-reduced-motion:reduce){.nav,.nav.scrolled{transition:none}}

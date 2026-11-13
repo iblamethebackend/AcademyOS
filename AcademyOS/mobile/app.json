@@ -1,0 +1,1 @@
+{"expo":{"name":"AcademyOS","slug":"academyos","version":"1.0.0","orientation":"portrait","userInterfaceStyle":"light","ios":{"supportsTablet":true,"bundleIdentifier":"app.academyos.mobile"},"android":{"package":"app.academyos.mobile"},"web":{"bundler":"metro","name":"AcademyOS"}}}

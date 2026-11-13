@@ -1,0 +1,13 @@
+{
+  "pdf_pages": 71,
+  "functional_modules": 24,
+  "unique_requirements": 144,
+  "screen_concepts": 23,
+  "pdf_bookmarks": 71,
+  "contents_links": 4,
+  "source_links": 5,
+  "layout_warnings": 0,
+  "bounds_and_completeness_issues": [],
+  "pdf_bytes": 347283,
+  "validation": "Document validation only; no application has been implemented or tested."
+}

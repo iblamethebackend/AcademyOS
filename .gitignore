@@ -1,0 +1,30 @@
+# Local credentials and machine configuration
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+credentials.json
+
+# Dependencies, build output and local checks
+node_modules/
+.next/
+.next-preview/
+.expo/
+dist/
+web-build/
+native-export/
+test-results/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+
+# Generated release packs; their source and design documents are included.
+*.zip

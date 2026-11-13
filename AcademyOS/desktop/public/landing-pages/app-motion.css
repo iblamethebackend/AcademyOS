@@ -1,0 +1,13 @@
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+:where(button,a.pill,nav a){transition:background-color 180ms,border-color 180ms,color 180ms,box-shadow 180ms,scale 160ms cubic-bezier(.22,1,.36,1)}
+:where(button,a.pill):active:not(:disabled){scale:.975}
+:where(button,a):focus-visible{outline:2px solid #739c80;outline-offset:4px}
+dialog[open]{animation:landing-dialog-enter 240ms cubic-bezier(.22,1,.36,1) both}
+dialog[open]::backdrop{animation:landing-backdrop-enter 200ms ease-out both}
+.nav-links.open{animation:landing-dialog-enter 240ms cubic-bezier(.22,1,.36,1) both}
+@keyframes landing-dialog-enter{from{opacity:0;translate:0 9px}to{opacity:1;translate:0 0}}
+@keyframes landing-backdrop-enter{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.motion-paused button,.motion-paused a.pill{transition:none}
+
+input:focus,input:focus-visible,textarea:focus,textarea:focus-visible,select:focus,select:focus-visible{outline:none;outline-offset:0}
