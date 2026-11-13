@@ -63,3 +63,9 @@
 @media(max-width:760px){.phone-country-display{font-size:13px;gap:7px}}
 
 .school-registration-page .register-form .login-input select{min-width:0;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+
+.school-registration-page .register-form .login-input textarea{width:100%;min-width:0;resize:vertical;border:0;outline:none;background:transparent;color:#274734;font:inherit;font-size:13px;line-height:1.5;padding:11px 0}
+.school-registration-page .register-form .login-input textarea::placeholder{font-size:12px;color:#89968e}
+.school-registration-page .register-review small{overflow-wrap:anywhere;white-space:pre-wrap}
+@media(min-width:761px){.school-registration-page.auth-split .login-main{overflow-y:auto;align-items:safe center}.school-registration-page.auth-split .login-card{flex-shrink:0}}
+@media(max-width:760px){.school-registration-page .register-form .login-input textarea{font-size:16px}}

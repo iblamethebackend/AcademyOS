@@ -24,10 +24,15 @@
 .school-profile-form.is-readonly :is(.field input,.field select,.field textarea,.input-affix,.phone-number-input){border-color:transparent;background:transparent;box-shadow:none;color:#36533f;opacity:1;-webkit-text-fill-color:#36533f;cursor:default}
 .school-profile-form.is-readonly :is(.field input,.field select,.field textarea){resize:none}
 .school-profile-form.is-readonly .field select{appearance:none}
-.school-profile-form.is-readonly .phone-country-display>svg{visibility:hidden}
-.school-profile-form.is-readonly .phone-country-picker{border-right-color:transparent}
+.school-profile-form.is-readonly .phone-country-display>svg{display:none}
+.school-profile-form.is-readonly .phone-country-picker{border-right:0;padding-right:0}
+.school-profile-form.is-readonly .phone-number-input{gap:8px}
 .school-profile-form.is-editing :is(.field input,.field select,.field textarea,.input-affix,.phone-number-input){border-color:#d9e3d9;background:#ffffffb0}
 .school-profile-form :is(.field input,.field select,.field textarea,.input-affix,.phone-number-input){transition:background-color 180ms,border-color 180ms}
 .school-profile-view-footer{display:flex;border-top:1px solid #e5ebdf;padding-top:18px;margin-top:24px;color:#87998a;font-size:10px;line-height:1.7}
 .school-profile-view-footer>span{display:flex;align-items:center;gap:7px}
 @media(max-width:760px){.school-profile-controls{gap:8px}.school-profile-controls .badge{font-size:8px}.save-action-buttons{width:100%}.save-action-buttons>.button{flex:1}.school-profile-view-footer{font-size:9px}}
+
+.school-location{min-width:0;border-top:1px solid #e1e8df;padding-top:20px}.school-location>h3{font-size:12px;font-weight:550;color:#627d60;margin:0 0 14px}.school-location-value{display:grid;gap:8px;padding:4px 13px}.school-location-value p{font-size:13px;color:#36533f;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.school-location-value>span{font-size:11px;color:#768773;line-height:1.6}.school-location-fields{display:grid;gap:16px}
+
+.school-language-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:18px}.school-language-heading>label{font-size:12px;font-weight:550;color:#627d60}.school-language-heading>.text-button{font-size:11px;gap:5px;padding:0;min-height:24px}.school-profile-form.is-readonly .school-language-heading>.text-button{cursor:pointer;color:#386b50;-webkit-text-fill-color:#386b50}

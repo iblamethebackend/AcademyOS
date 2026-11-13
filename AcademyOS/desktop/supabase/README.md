@@ -56,3 +56,11 @@ A successful signup or resend response acknowledges the request; it does not pro
 If no email arrives, inspect Authentication logs and the mail provider delivery logs. Check whether the address already has a confirmed account, in which case the owner should sign in. Verify custom SMTP configuration: Supabase's built-in mail service only delivers to project team addresses and is rate limited. Configure custom SMTP to send to other school owners. Do not disable email verification to work around delivery failures.
 
 See [SMTP configuration](https://supabase.com/docs/guides/auth/auth-smtp) and [email templates](https://supabase.com/docs/guides/auth/auth-email-templates).
+
+## Staff task attachments
+
+Run `staff-task-storage.sql` in this project's SQL editor to create the private `staff-task-submissions` bucket and owner-scoped INSERT/SELECT policies. This is a separate additive migration; the base workspace schema does not create Storage. Objects use `<workspace UUID>/<task UUID>/<file UUID>.<extension>`. Task/submission metadata remains inside owner-scoped workspace configuration. Staff membership and self-service logins are not enabled by this migration.
+
+Test file upload/download as the owner and verify another school owner and an unauthenticated client cannot read or insert under that workspace's prefix. Public URLs are not used. No remote storage migration or cross-owner storage test was possible from this environment.
+
+School achievement certificates reuse the same private bucket and owner policies. Their paths use the achievement UUID in the middle segment. No additional table or public bucket is required. Certificate metadata is validated with workspace updates.

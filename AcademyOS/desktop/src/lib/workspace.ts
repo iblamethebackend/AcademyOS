@@ -4,6 +4,7 @@ export const workspacePages=[
  {id:'campuses',label:'Campuses',icon:'building',title:'One community. Room to grow.',description:'Bring every school location into the picture.'},
  {id:'academics',label:'Academic year',icon:'book',title:'A thoughtful start to the year.',description:'Grades, subjects, working days and your academic calendar.'},
  {id:'people',label:'People & invitations',icon:'people',title:'The people who make it possible.',description:'Your team, student records and invitations, together.'},
+ {id:'staff-activity',label:'Staff activity',icon:'check',title:'Every task. Every contribution.',description:'Assigned work, recorded submissions and your team’s progress.'},
  {id:'departments',label:'Departments',icon:'grid',title:'Your teams. Your way.',description:'Create the departments that make sense for your school.'},
  {id:'branding',label:'Brand & preferences',icon:'palette',title:'Make it feel like your school.',description:'A familiar welcome, down to the smallest detail.'},
  {id:'launch',label:'Launch checklist',icon:'spark',title:'Ready for a wonderful first day.',description:'Review your foundations before activating the demo workspace.'},

@@ -95,3 +95,21 @@ Supabase integration is prepared behind `NEXT_PUBLIC_SUPABASE_ENABLED`. See `sup
 `npm run dev` explicitly uses Webpack. The previous Turbopack dev session repeatedly emitted `HMR hash mismatch` and forced full login-page reloads. A running server must be restarted to pick up the changed dev command. Browser verification with `scripts/login-stability.mjs` confirmed a single document load, retained email input for 12 seconds, working recovery navigation, and no runtime errors.
 
 For isolated browser checks, `ACADEMYOS_ISOLATED_PREVIEW=1` uses `.next-preview` instead of the active server cache. This directory is ignored by Git.
+
+New school registration requires a physical school address in the School step. The address appears in review and in the school profile, and is saved in local and cloud school configuration. Timezone is not requested or displayed; an address does not infer the school timezone. Run `node scripts/registration-location-review.cjs` for validation and persistence checks.
+
+## Staff activity and assigned work
+
+The overview includes staff submission counts and links to `/workspace/staff-activity`. School owners can assign tasks to active roster members with a due date and instructions, record received work as notes and/or files, review submissions, complete tasks, and reopen them. Filters cover member, status, overdue work and search. Staff activity means a recorded submission in the last seven days, not online presence. Each record explicitly identifies the school owner as its recorder. No notifications or staff self-service access are created.
+
+Task records use the existing school configuration persistence and are optional for older workspaces. Daily overdue status uses the school's selected timezone. Attachments accept PDF, CSV, TXT, DOCX, XLSX, PNG and JPEG, up to 10 MB. In local preview, actual files live in IndexedDB and are available only in that browser; JSON configuration exports include attachment metadata, not file bytes. Browser data cleanup removes local files. Live uploads use a private Supabase Storage bucket with school-owner policies; apply `supabase/staff-task-storage.sql` to enable them. Upload errors remain visible and do not create a submitted task. That storage migration has not been applied or verified remotely in this session.
+
+Validation: `node scripts/staff-tasks-review.cjs` covers old workspace compatibility, task/submission validation, completion evidence, staff activity windows, overdue status, school timezones and upload limits.
+
+## School achievements and certificates
+
+School profile includes Achievements & certificates above the campus list. Owners can add or edit achievements and certificate entries with a title, issuer, date and description. Certificate entries require a PDF, PNG or JPEG file (up to 10 MB); achievement entries may omit the file. Cards support search, a details/certificate preview and download. Replacing a file while editing does not discard the existing reference if upload fails.
+
+Records persist inside the school configuration, with optional-field compatibility for older workspaces and validation on workspace saves. Files use the existing private school-owner storage configured by `supabase/staff-task-storage.sql`. Apply that migration once if the shared file bucket is not yet configured. Preview mode stores file bytes in IndexedDB; JSON exports contain metadata only. Live bucket setup, remote upload and cross-owner policies remain unverified in this environment. Existing files are retained when a record's file is replaced; file deletion is not exposed.
+
+Run `node scripts/school-achievements-review.cjs` for metadata, file type/size, date, duplicate and compatibility checks.
