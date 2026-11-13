@@ -48,3 +48,11 @@ The project owner ran `schema.sql` successfully in the target SQL Editor. Live S
 This agent's execution environment returns `EACCES` for outbound Supabase requests, and the plugin connection is currently unavailable. Run the Next.js dev server from your own terminal to allow its server-side Supabase calls. Open `/api/connection` to inspect Auth reachability and anonymous table restrictions. A successful status check is a prerequisite to testing real signup, but does not replace a two-user RLS test.
 
 Add `http://localhost:3000/auth/callback` to Supabase Auth redirect URLs before using confirmation and recovery links. The shared demo password is not accepted in live mode. Use the password you enter during real registration.
+
+## Confirmation email delivery
+
+A successful signup or resend response acknowledges the request; it does not prove inbox delivery. The registration page states this explicitly. Confirmation emails may contain a link only. Code entry works only when the confirmation template includes `{{ .Token }}`.
+
+If no email arrives, inspect Authentication logs and the mail provider delivery logs. Check whether the address already has a confirmed account, in which case the owner should sign in. Verify custom SMTP configuration: Supabase's built-in mail service only delivers to project team addresses and is rate limited. Configure custom SMTP to send to other school owners. Do not disable email verification to work around delivery failures.
+
+See [SMTP configuration](https://supabase.com/docs/guides/auth/auth-smtp) and [email templates](https://supabase.com/docs/guides/auth/auth-email-templates).
