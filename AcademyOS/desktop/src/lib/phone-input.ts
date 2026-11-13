@@ -15,3 +15,14 @@ export function limitNationalDigits(value:string,country:CountryCode){
  while(digits&&validatePhoneNumberLength(digits,country)==='TOO_LONG')digits=digits.slice(0,-1);
  return digits;
 }
+
+// Autofill can supply a complete international number to a national-number field.
+// Parse it before applying national limits so the calling code consumes no digits.
+export function normalizePhoneInput(value:string,country:CountryCode){
+ const raw=sanitizePhoneInput(value.trim());
+ const parsed=parsePhoneNumberFromString(raw,country);
+ if(parsed?.country&&(raw.startsWith('+')||(parsed.country===country&&parsed.isPossible()))){
+  return {country:parsed.country,digits:limitNationalDigits(parsed.nationalNumber,parsed.country)};
+ }
+ return {country,digits:limitNationalDigits(raw,country)};
+}
