@@ -7,7 +7,7 @@ const groups:{name:string;icon:string;features:Feature[]}[]=[
  {name:'Your school, organised',icon:'school',features:[
   {name:'School onboarding & sign-in',description:'Owner registration, email verification, workspace sign-in and password recovery.',available:true},
   {name:'School profile & campuses',description:'School identity, contact details, workspace address and multiple campus locations.',available:true},
-  {name:'Brand & preferences',description:'School colours, initials, date and number formats, document prefixes and portal preferences.',available:true},
+  {name:'School appearance & settings',description:'School colours, initials, date and number formats, document prefixes and portal preferences.',available:true},
   {name:'Guided setup & workspace overview',description:'A foundation checklist, setup progress and a view of your school records.',available:true},
   {name:'Access, approvals & school lifecycle',description:'Account invitations, scoped roles, approval workflows, custom domains and managed retention.'},
  ]},

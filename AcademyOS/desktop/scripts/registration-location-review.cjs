@@ -44,6 +44,7 @@ createSchoolPreview(school);
 const saved = JSON.parse(localStorage.getItem(registeredSetupKey(school.slug)));
 assert.equal(saved.school.timezone, 'Europe/London');
 assert.equal(saved.school.address, '10 Example Road, London, UK');
+assert.equal(saved.campuses[0].address,'10 Example Road, London, UK','Primary campus uses the registered school address');
 assert.equal(makeRegisteredState({...school, timezone: 'America/New_York'}).school.timezone, 'America/New_York');
 createSchoolPreview({...school,slug:'address-only',timezone:undefined});
 const addressOnly=JSON.parse(localStorage.getItem(registeredSetupKey('address-only')));

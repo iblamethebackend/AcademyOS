@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),ts=require('typescript');
+require.extensions['.ts']=(module,filename)=>module._compile(ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText,filename);
+const {suggestSubjects,canonicalSubject}=require('../src/lib/subject-suggestions.ts');
+for(const [query,correct] of [['phy','Physics'],['physcis','Physics'],['phisics','Physics'],['chemstry','Chemistry'],['biolgy','Biology'],['mathematic','Mathematics'],['enviromental studies','Environmental Studies'],['maths','Mathematics'],['evs','Environmental Studies'],['gk','General Knowledge']])assert.equal(suggestSubjects(query)[0]?.name,correct,query);
+assert.equal(suggestSubjects('maths',['Mathematics'])[0].alreadyAdded,true);
+assert.equal(suggestSubjects('mathematic',['Maths'])[0].alreadyAdded,true,'Aliases of existing subjects must not be offered as new');
+assert.equal(canonicalSubject('  computer   science '),'Computer Science');
+assert.equal(canonicalSubject('MATHS'),'Mathematics');
+assert.equal(canonicalSubject('Applied Robotics Lab'),'Applied Robotics Lab','Keep custom subjects');
+assert.equal(canonicalSubject('constructor'),'constructor');
+assert.deepEqual(suggestSubjects('   '),[]);
+assert.deepEqual(suggestSubjects('zzzzzzzzzzzz'),[]);
+assert.ok(suggestSubjects('computer',[],2).length<=2);
+assert.ok(suggestSubjects('social').some(item=>item.name==='Social Studies'));
+console.log('PASS: prefix and typo matches, transpositions, correct spellings, aliases, existing subjects, custom input and result limits.');

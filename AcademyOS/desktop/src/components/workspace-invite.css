@@ -21,3 +21,5 @@
 .invite-error{display:flex;align-items:flex-start;gap:8px;border-radius:9px;background:#faf0e9;padding:10px 12px;font-size:11px;line-height:1.7;color:#a9654d}.invite-error svg{flex-shrink:0;margin-top:2px}
 @media(max-width:480px){.modal.workspace-invite-modal{padding:23px 21px;border-radius:22px}.workspace-invite-modal .modal-head h2{font-size:24px}.invite-form{gap:17px}.invite-control input,.invite-control select{font-size:16px}.invite-actions{gap:10px}.invite-submit{flex:1}.invite-cancel{padding-inline:14px}}
 @media(max-height:650px){.modal.workspace-invite-modal{padding:20px}.workspace-invite-modal .modal-head{padding-bottom:15px}.invite-form{padding-top:15px;gap:13px}.invite-control{min-height:42px}.invite-control input,.invite-control select{padding:9px 0}.invite-actions{padding-top:14px}}
+
+.invite-department-note{font-size:11px;line-height:1.7;color:#7e9479;margin:-4px 0 0}.invite-submit:disabled{opacity:.6;cursor:not-allowed}

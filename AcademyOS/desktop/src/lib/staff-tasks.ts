@@ -1,4 +1,6 @@
 import type {State} from './model';
+import {prepareStaffMember,type StaffMemberDraft} from './staff-members';
+import {normalizeDepartmentName,suggestedDepartmentPrefix} from './invitation-department';
 
 export type TaskAttachment={id:string;name:string;size:number;type:string;path:string;storage:'local'|'cloud'};
 export type StaffSubmission={id:string;submittedAt:string;note:string;recordedBy:'School owner';attachment?:TaskAttachment};
@@ -39,3 +41,29 @@ export function validStaffTaskConfiguration(value:unknown):boolean{
  });
 }
 export function schoolTasks(state:State){return state.staffTasks||[]}
+export function taskDepartment(state:State,task:StaffTask){
+ const member=state.members.find(person=>person.id===task.memberId);
+ return state.departments?.find(department=>department.id===member?.departmentId);
+}
+export function matchesTaskDepartment(state:State,task:StaffTask,selection:string){
+ if(!selection)return true;
+ const department=taskDepartment(state,task);
+ if(selection==='__unassigned__')return !department;
+ if(!department)return false;
+ return selection.startsWith(suggestedDepartmentPrefix)?normalizeDepartmentName(department.name)===normalizeDepartmentName(selection.slice(suggestedDepartmentPrefix.length)):department.id===selection;
+}
+export type NewTaskStaff=StaffMemberDraft;
+export type TaskAssignment={id:string;memberId:string;title:string;description:string;dueDate:string;createdAt:string};
+export function assignStaffTask(state:State,input:TaskAssignment,newStaff?:NewTaskStaff):State{
+ if(schoolTasks(state).length>=500)throw new Error('This workspace has reached its 500 task limit.');
+ if(input.title.trim().length<3||input.title.length>120||input.description.length>1000||!validTaskDate(input.dueDate))throw new Error('Enter a task title, instructions and a valid due date.');
+ if(schoolTasks(state).some(task=>task.id===input.id))throw new Error('This task already exists.');
+ let members=state.members,departments=state.departments;
+ let person=members.find(member=>member.id===input.memberId&&member.status==='Active');
+ if(newStaff){const prepared=prepareStaffMember(state,newStaff);members=prepared.state.members;departments=prepared.state.departments;person=prepared.member;}
+ if(!person)throw new Error('Select an active staff member or add a new one.');
+ const task:StaffTask={id:input.id,memberId:person.id,memberName:person.name,title:input.title.trim(),description:input.description.trim(),dueDate:input.dueDate,createdAt:input.createdAt,status:'Assigned',submissions:[]};
+ const next={...state,members,...(departments?{departments}:{}),staffTasks:[task,...schoolTasks(state)]};
+ if(!validStaffTaskConfiguration(next))throw new Error('Check the task details before saving.');
+ return next;
+}

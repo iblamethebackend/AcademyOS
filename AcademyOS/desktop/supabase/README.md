@@ -64,3 +64,5 @@ Run `staff-task-storage.sql` in this project's SQL editor to create the private 
 Test file upload/download as the owner and verify another school owner and an unauthenticated client cannot read or insert under that workspace's prefix. Public URLs are not used. No remote storage migration or cross-owner storage test was possible from this environment.
 
 School achievement certificates reuse the same private bucket and owner policies. Their paths use the achievement UUID in the middle segment. No additional table or public bucket is required. Certificate metadata is validated with workspace updates.
+
+Campus photos reuse the private file bucket and owner policies, with the campus UUID as the middle path segment. Campus address, in-charge and roster mappings are validated metadata in the existing workspace configuration; no new database table is required. Apply the existing file-storage migration if the shared bucket is not configured.
