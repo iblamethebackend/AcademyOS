@@ -95,3 +95,45 @@ Supabase integration is prepared behind `NEXT_PUBLIC_SUPABASE_ENABLED`. See `sup
 `npm run dev` explicitly uses Webpack. The previous Turbopack dev session repeatedly emitted `HMR hash mismatch` and forced full login-page reloads. A running server must be restarted to pick up the changed dev command. Browser verification with `scripts/login-stability.mjs` confirmed a single document load, retained email input for 12 seconds, working recovery navigation, and no runtime errors.
 
 For isolated browser checks, `ACADEMYOS_ISOLATED_PREVIEW=1` uses `.next-preview` instead of the active server cache. This directory is ignored by Git.
+
+New school registration requires a physical school address in the School step. The address appears in review and in the school profile, and is saved in local and cloud school configuration. Timezone is not requested or displayed; an address does not infer the school timezone. Run `node scripts/registration-location-review.cjs` for validation and persistence checks.
+
+## Staff activity and assigned work
+
+The overview includes staff submission counts and links to `/workspace/staff-activity`. School owners can assign tasks to active roster members with a due date and instructions, record received work as notes and/or files, review submissions, complete tasks, and reopen them. Filters cover member, status, overdue work and search. Staff activity means a recorded submission in the last seven days, not online presence. Each record explicitly identifies the school owner as its recorder. No notifications or staff self-service access are created.
+
+Task records use the existing school configuration persistence and are optional for older workspaces. Daily overdue status uses the school's selected timezone. Attachments accept PDF, CSV, TXT, DOCX, XLSX, PNG and JPEG, up to 10 MB. In local preview, actual files live in IndexedDB and are available only in that browser; JSON configuration exports include attachment metadata, not file bytes. Browser data cleanup removes local files. Live uploads use a private Supabase Storage bucket with school-owner policies; apply `supabase/staff-task-storage.sql` to enable them. Upload errors remain visible and do not create a submitted task. That storage migration has not been applied or verified remotely in this session.
+
+Validation: `node scripts/staff-tasks-review.cjs` covers old workspace compatibility, task/submission validation, completion evidence, staff activity windows, overdue status, school timezones and upload limits.
+
+## School achievements and certificates
+
+School profile includes Achievements & certificates above the campus list. Owners can add or edit achievements and certificate entries with a title, issuer, date and description. Certificate entries require a PDF, PNG or JPEG file (up to 10 MB); achievement entries may omit the file. Cards support search, a details/certificate preview and download. Replacing a file while editing does not discard the existing reference if upload fails.
+
+Records persist inside the school configuration, with optional-field compatibility for older workspaces and validation on workspace saves. Files use the existing private school-owner storage configured by `supabase/staff-task-storage.sql`. Apply that migration once if the shared file bucket is not yet configured. Preview mode stores file bytes in IndexedDB; JSON exports contain metadata only. Live bucket setup, remote upload and cross-owner policies remain unverified in this environment. Existing files are retained when a record's file is replaced; file deletion is not exposed.
+
+Run `node scripts/school-achievements-review.cjs` for metadata, file type/size, date, duplicate and compatibility checks.
+
+Workspace notifications now open as a nonmodal popup anchored to the bell. Outside click, Escape, the close button and a second bell click dismiss it. Notification history scrolls within the popup, unread activity clears when viewed, and narrow screens keep the popup within the viewport.
+
+Invitations offer existing school departments and suggested departments, including academic subjects, administration, HR and finance. Selecting a suggestion creates that department together with the invited roster member when the invitation is prepared; cancelling does not create it. Existing departments are reused by normalized name. Department assignment does not alter the candidate's account role. `node scripts/invitation-department-review.cjs` covers assignment integrity, duplicates, stale selections and limits.
+
+## Campus profiles and people mapping
+
+Every campus has its own photo, physical address, in-charge, staff mapping and student mapping. The Campuses page and the campus cards in School profile use the same management form. A selected in-charge is included in that campus's staff mapping. Staff and students may be explicitly mapped to more than one campus; changing one campus does not remove mappings elsewhere. Counts and the in-charge's name appear on every campus card. New registrations copy the entered school address to their primary campus; existing campuses remain compatible and can be completed in Manage campus.
+
+Photos accept valid JPG/PNG images up to 5 MB, with preview and replacement. They use the existing private school-owner file bucket (`supabase/staff-task-storage.sql`) in live mode and IndexedDB in preview mode. The campus UUID scopes each photo independently. Live storage setup and cross-owner Storage access could not be verified remotely. Replaced/removed photo references do not delete retained file objects.
+
+Saving validates campus codes, people references and mapping consistency on the server as well as in the UI. Removing an additional campus requires confirmation, preserves school staff/student records and leaves other campuses untouched. The primary campus cannot be removed. Campus in-charge is an organisational assignment, not a change to account permissions. Run `node scripts/campus-management-review.cjs` for multi-campus, mapping, compatibility, photo, duplicate-code and deletion checks.
+
+The campus in-charge dropdown also offers Add new campus in-charge, with inline name/email fields. Save campus creates the school staff record and campus assignment together; cancelling creates neither. Existing email addresses must be selected from the staff list rather than added again. The new roster designation is Campus in-charge and does not create a login, send email or grant account permissions. Existing staff can be reused as in-charge for multiple campuses.
+
+Subject entry offers correctly spelled common subject suggestions below the input, including prefix, abbreviation and typo matches. Mouse selection or arrow keys plus Enter add the canonical subject name. Already-added subjects are marked, common aliases normalize consistently, and custom subjects remain supported. Suggestions run locally without a spelling API. Run `node scripts/subject-suggestions-review.cjs` for matching, aliases, duplicates and custom input checks.
+
+The Assign task form also offers Add new staff member inline. Name, email, roster role and an optional school/suggested department are saved together with the task. Duplicate emails require selecting the existing active staff record. Invalid task/staff details and cancellation create no member, department or task. New staff are roster records; no authentication account, email or access link is created.
+
+Assigned work can also be filtered by department alongside staff, status and search. The department dropdown includes school-created departments, all remaining suggested departments and No department. It matches the assignee's current roster department; choosing a filter does not create departments or change assignments. Task cards show that department for context.
+
+The staff task filter includes Add new staff member, opening a standalone roster form without creating a task. On save, the new person is selected in the staff filter and preselected if Assign task is opened. Staff creation shares validation with inline task creation; cancellation and duplicate emails do not create records. Clear-filter labels are No assigned staff, No assigned department and No assigned status. Filters continue to combine normally.
+
+After a task is assigned, staff/department/status filters select the saved assignee, their current department (or No department), and Assigned; stale search text is cleared so the new task is visible. The automatically focused task stays visible as it is submitted, completed or reopened. Manually changing any filter or search stops automatic tracking, preserving user control. Cancelling assignment leaves the existing filters unchanged.
